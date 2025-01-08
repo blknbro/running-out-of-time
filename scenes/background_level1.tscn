@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=3 uid="uid://b1ma8fldpm7tf"]
+
+[ext_resource type="Texture2D" uid="uid://bd4ddkaryhxpc" path="res://assets/images/background/plx-1.png" id="1_nkcih"]
+[ext_resource type="Texture2D" uid="uid://dghm15ryd06fl" path="res://assets/images/background/plx-2.png" id="2_w4428"]
+[ext_resource type="Texture2D" uid="uid://b3gr2q00vpf1i" path="res://assets/images/background/plx-3.png" id="3_j3k0b"]
+[ext_resource type="Texture2D" uid="uid://csidrbnyatvd" path="res://assets/images/background/plx-4.png" id="4_x2clb"]
+[ext_resource type="Texture2D" uid="uid://c5bbaxi5uxpmg" path="res://assets/images/background/plx-5.png" id="5_jtuht"]
+
+[node name="Background" type="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(3, 3)
+texture = ExtResource("1_nkcih")
+centered = false
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.6, 1)
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+texture_filter = 1
+scale = Vector2(3, 3)
+texture = ExtResource("2_w4428")
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.7, 1)
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer2"]
+texture_filter = 1
+scale = Vector2(3, 3)
+texture = ExtResource("3_j3k0b")
+centered = false
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.8, 1)
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer3"]
+texture_filter = 1
+scale = Vector2(3, 3)
+texture = ExtResource("4_x2clb")
+centered = false
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.9, 1)
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer4"]
+texture_filter = 1
+scale = Vector2(3, 3)
+texture = ExtResource("5_jtuht")
+centered = false

@@ -1,9 +1,10 @@
 extends Node
 
-var skeleton_scene = preload("res://scenes/skeleton.tscn")
-var rock_scene = preload("res://scenes/rock.tscn")
+var skeleton_scene = preload("res://scenes/game_elements/skeleton.tscn")
+var rock_scene = preload("res://scenes/game_elements/rock.tscn")
+var barrel_scene = preload("res://scenes/game_elements/barrel.tscn")
 
-var obstacle_types := [skeleton_scene, rock_scene]
+var obstacle_types := [skeleton_scene, rock_scene, barrel_scene]
 var obstacles : Array
 
 

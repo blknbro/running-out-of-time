@@ -1,10 +1,10 @@
 [gd_scene load_steps=12 format=4 uid="uid://d044npcr4ax74"]
 
-[ext_resource type="Script" path="res://scripts/enterance_cutscene.gd" id="1_8vjg6"]
-[ext_resource type="PackedScene" uid="uid://b63in8fk0dmw8" path="res://scenes/game_elements/ground_level1.tscn" id="1_58jsw"]
-[ext_resource type="PackedScene" uid="uid://b1ma8fldpm7tf" path="res://scenes/game_elements/background_level1.tscn" id="2_euy5w"]
-[ext_resource type="PackedScene" uid="uid://34pt184psva4" path="res://scenes/game_elements/player.tscn" id="3_8mr5u"]
-[ext_resource type="Texture2D" uid="uid://dnr6mtgtuokrp" path="res://assets/images/tilesets/Ruins_Tile Set.png" id="4_jancc"]
+[ext_resource type="Script" path="res://scripts/enterance_cutscene.gd" id="1_sj2ig"]
+[ext_resource type="PackedScene" uid="uid://b63in8fk0dmw8" path="res://scenes/game_elements/ground_level1.tscn" id="2_vddc1"]
+[ext_resource type="PackedScene" uid="uid://b1ma8fldpm7tf" path="res://scenes/game_elements/background_level1.tscn" id="3_2gmfs"]
+[ext_resource type="PackedScene" uid="uid://34pt184psva4" path="res://scenes/game_elements/player.tscn" id="4_rm3a3"]
+[ext_resource type="Texture2D" uid="uid://dnr6mtgtuokrp" path="res://assets/images/tilesets/Ruins_Tile Set.png" id="5_eypfo"]
 
 [sub_resource type="Animation" id="Animation_anuqu"]
 resource_name = "Enter"
@@ -68,7 +68,7 @@ _data = {
 }
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fi8nh"]
-texture = ExtResource("4_jancc")
+texture = ExtResource("5_eypfo")
 0:0/0 = 0
 1:0/0 = 0
 6:0/0 = 0
@@ -267,13 +267,13 @@ sources/0 = SubResource("TileSetAtlasSource_fi8nh")
 size = Vector2(20, 82)
 
 [node name="EnteranceCutscene" type="Node2D"]
-script = ExtResource("1_8vjg6")
+script = ExtResource("1_sj2ig")
 game_running = true
 
-[node name="Ground" parent="." instance=ExtResource("1_58jsw")]
+[node name="Ground" parent="." instance=ExtResource("2_vddc1")]
 position = Vector2(0, 608)
 
-[node name="Background" parent="." instance=ExtResource("2_euy5w")]
+[node name="Background" parent="." instance=ExtResource("3_2gmfs")]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -281,7 +281,7 @@ libraries = {
 }
 autoplay = "Enter"
 
-[node name="Player" parent="." instance=ExtResource("3_8mr5u")]
+[node name="Player" parent="." instance=ExtResource("4_rm3a3")]
 position = Vector2(-24, 552)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]

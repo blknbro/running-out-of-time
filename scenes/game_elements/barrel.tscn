@@ -6,7 +6,9 @@
 texture_filter = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2.5, 2.5)
 texture = ExtResource("1_6kd62")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(2.5, 2.5)
 polygon = PackedVector2Array(-13.5, 13, -13.5, -13, 13.5, -13, 13.5, 13)

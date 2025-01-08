@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bbmvnysaka8n1"]
+[gd_scene load_steps=10 format=3 uid="uid://bbmvnysaka8n1"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_ls67u"]
 [ext_resource type="Texture2D" uid="uid://crjoe4old6dny" path="res://assets/images/background/menu-background.png" id="2_o85e0"]
@@ -14,14 +14,6 @@ modulate_color = Color(0.741385, 0.741385, 0.741384, 1)
 texture = ExtResource("3_huy5r")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hfdbh"]
-texture = ExtResource("4_syfn6")
-texture_margin_left = 2.0
-texture_margin_top = 2.0
-texture_margin_right = 2.0
-texture_margin_bottom = 4.0
-region_rect = Rect2(320, 32, 64, 32)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wd0jl"]
 texture = ExtResource("4_syfn6")
 texture_margin_left = 2.0
 texture_margin_top = 2.0
@@ -87,7 +79,7 @@ offset_right = 232.0
 offset_bottom = -48.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_constants/separation = 12
+theme_override_constants/separation = 24
 alignment = 1
 
 [node name="StartButton" type="Button" parent="VBoxContainer"]
@@ -104,21 +96,6 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_hfdbh")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_hfdbh")
 theme_override_styles/normal = SubResource("StyleBoxTexture_hfdbh")
 text = "Start"
-
-[node name="OptionsButton" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0.223529, 0.223529, 0.223529, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("4_44cov")
-theme_override_styles/hover = SubResource("StyleBoxTexture_wd0jl")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_wd0jl")
-theme_override_styles/normal = SubResource("StyleBoxTexture_wd0jl")
-text = "Options"
 
 [node name="QuitButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2

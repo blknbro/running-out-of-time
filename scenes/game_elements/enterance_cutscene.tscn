@@ -1,9 +1,9 @@
 [gd_scene load_steps=12 format=4 uid="uid://d044npcr4ax74"]
 
-[ext_resource type="Script" path="res://scenes/enterance_cutscene.gd" id="1_8vjg6"]
-[ext_resource type="PackedScene" uid="uid://b63in8fk0dmw8" path="res://scenes/ground_level1.tscn" id="1_58jsw"]
-[ext_resource type="PackedScene" uid="uid://b1ma8fldpm7tf" path="res://scenes/background_level1.tscn" id="2_euy5w"]
-[ext_resource type="PackedScene" uid="uid://34pt184psva4" path="res://scenes/player.tscn" id="3_8mr5u"]
+[ext_resource type="Script" path="res://scripts/enterance_cutscene.gd" id="1_8vjg6"]
+[ext_resource type="PackedScene" uid="uid://b63in8fk0dmw8" path="res://scenes/game_elements/ground_level1.tscn" id="1_58jsw"]
+[ext_resource type="PackedScene" uid="uid://b1ma8fldpm7tf" path="res://scenes/game_elements/background_level1.tscn" id="2_euy5w"]
+[ext_resource type="PackedScene" uid="uid://34pt184psva4" path="res://scenes/game_elements/player.tscn" id="3_8mr5u"]
 [ext_resource type="Texture2D" uid="uid://dnr6mtgtuokrp" path="res://assets/images/tilesets/Ruins_Tile Set.png" id="4_jancc"]
 
 [sub_resource type="Animation" id="Animation_anuqu"]

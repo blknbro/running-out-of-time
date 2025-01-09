@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://8ul1d8drc7fj"
+path="res://.godot/imported/Fantasy Vol4 Descent Cut 30.wav-03eee189745b99b731b13a7a670ee39a.sample"
+
+[deps]
+
+source_file="res://assets/sounds/music/Fantasy Vol4 Descent Cut 30.wav"
+dest_files=["res://.godot/imported/Fantasy Vol4 Descent Cut 30.wav-03eee189745b99b731b13a7a670ee39a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

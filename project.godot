@@ -16,6 +16,14 @@ config/features=PackedStringArray("4.3", "Forward Plus")
 boot_splash/image="res://assets/images/runningoutoftime.png"
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="res://assets/sounds/default_bus_layout.tres"
+
+[autoload]
+
+MusicPlayer="*res://scenes/ui/music_player.tscn"
+
 [display]
 
 window/size/mode=3

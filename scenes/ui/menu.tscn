@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://bbmvnysaka8n1"]
+[gd_scene load_steps=11 format=3 uid="uid://bbmvnysaka8n1"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_ls67u"]
 [ext_resource type="Texture2D" uid="uid://crjoe4old6dny" path="res://assets/images/background/menu-background.png" id="2_o85e0"]
 [ext_resource type="Texture2D" uid="uid://do6gm18l8l67w" path="res://assets/images/runningoutoftime.png" id="3_huy5r"]
 [ext_resource type="FontFile" uid="uid://dx6wnerk5s62h" path="res://assets/fonts/LEMONMILK-Regular.otf" id="4_44cov"]
 [ext_resource type="Texture2D" uid="uid://cwu8js4r4ad5l" path="res://assets/images/ui.png" id="4_syfn6"]
+[ext_resource type="PackedScene" uid="uid://cgdnsgujg0ijs" path="res://scenes/ui/volume_slider.tscn" id="6_igb61"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_80wox"]
 texture = ExtResource("2_o85e0")
@@ -73,10 +74,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -232.0
-offset_top = -208.0
-offset_right = 232.0
-offset_bottom = -48.0
+offset_left = -144.0
+offset_top = -136.0
+offset_right = 176.0
+offset_bottom = -32.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/separation = 24
@@ -111,6 +112,61 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_wudu6")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_wudu6")
 theme_override_styles/normal = SubResource("StyleBoxTexture_wudu6")
 text = "Quit"
+
+[node name="MasterVolumeSlider" parent="." instance=ExtResource("6_igb61")]
+texture_filter = 1
+layout_mode = 0
+offset_left = 472.0
+offset_top = 472.0
+offset_right = 752.0
+offset_bottom = 496.0
+bus_name = "Master"
+
+[node name="MasterLabel" type="Label" parent="MasterVolumeSlider"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -80.0
+offset_right = -17.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("4_44cov")
+text = "MASTER"
+horizontal_alignment = 2
+
+[node name="MusicVolumeSlider" parent="." instance=ExtResource("6_igb61")]
+texture_filter = 1
+layout_mode = 0
+offset_left = 472.0
+offset_top = 448.0
+offset_right = 752.0
+offset_bottom = 472.0
+bus_name = "Music"
+
+[node name="MusicLabel" type="Label" parent="MusicVolumeSlider"]
+texture_filter = 1
+offset_left = -80.0
+offset_right = -17.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("4_44cov")
+text = "MUSIC"
+horizontal_alignment = 2
+
+[node name="SFXVolumeSlider" parent="." instance=ExtResource("6_igb61")]
+texture_filter = 1
+layout_mode = 0
+offset_left = 472.0
+offset_top = 424.0
+offset_right = 752.0
+offset_bottom = 448.0
+bus_name = "SFX"
+
+[node name="SFXLabel" type="Label" parent="SFXVolumeSlider"]
+texture_filter = 1
+offset_left = -80.0
+offset_right = -17.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("4_44cov")
+text = "SFX"
+horizontal_alignment = 2
 
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

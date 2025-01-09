@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="OvaniSong" load_steps=7 format=3 uid="uid://bf1d3hkp2r172"]
+
+[ext_resource type="AudioStream" uid="uid://bm61s4j05m7jk" path="res://assets/sounds/music/Fantasy Vol4 Descent Intensity 1.wav" id="1_j4bjf"]
+[ext_resource type="AudioStream" uid="uid://cv73yuxlp2wmn" path="res://assets/sounds/music/Fantasy Vol4 Descent Intensity 2.wav" id="2_i7r85"]
+[ext_resource type="AudioStream" uid="uid://44d5715vv3jg" path="res://assets/sounds/music/Fantasy Vol4 Descent Main.wav" id="3_gse1l"]
+[ext_resource type="AudioStream" uid="uid://8ul1d8drc7fj" path="res://assets/sounds/music/Fantasy Vol4 Descent Cut 30.wav" id="4_iwc56"]
+[ext_resource type="AudioStream" uid="uid://b7p1qyirvrchi" path="res://assets/sounds/music/Fantasy Vol4 Descent Cut 60.wav" id="5_0hr5e"]
+[ext_resource type="Script" path="res://assets/sounds/SFX/OvaniPlugin/OvaniSong.gd" id="6_0vqw5"]
+
+[resource]
+script = ExtResource("6_0vqw5")
+Intensity1 = ExtResource("1_j4bjf")
+Intensity2 = ExtResource("2_i7r85")
+Intensity3 = ExtResource("3_gse1l")
+Loop30 = ExtResource("4_iwc56")
+Loop60 = ExtResource("5_0hr5e")
+ReverbTail = 3.989
+SongMode = 0

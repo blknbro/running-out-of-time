@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b7i5tqk7c41fu"
+path="res://.godot/imported/Rhythmic Vol2 Chankura Cut 60.wav-be9a141f736459b3b1726bc961e5484f.sample"
+
+[deps]
+
+source_file="res://assets/sounds/music/Rhythmic Vol2 Chankura Cut 60.wav"
+dest_files=["res://.godot/imported/Rhythmic Vol2 Chankura Cut 60.wav-be9a141f736459b3b1726bc961e5484f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

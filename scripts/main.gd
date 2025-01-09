@@ -4,6 +4,8 @@ var skeleton_scene = preload("res://scenes/game_elements/skeleton.tscn")
 var rock_scene = preload("res://scenes/game_elements/rock.tscn")
 var barrel_scene = preload("res://scenes/game_elements/barrel.tscn")
 
+var jungle_music : OvaniSong = load("res://assets/sounds/music/background_music_jungle.tres")
+
 var obstacle_types := [skeleton_scene, rock_scene, barrel_scene]
 var obstacles : Array
 
@@ -42,6 +44,8 @@ func new_game():
 	get_tree().paused = false
 	difficulty = 0
 	
+	MusicPlayer.QueueSong(jungle_music)
+	
 	for obstacle in obstacles:
 		obstacle.queue_free()
 	obstacles.clear()
@@ -78,9 +82,8 @@ func _process(delta: float) -> void:
 		for obstacle in obstacles:
 			if obstacle.position.x < ($Camera2D.position.x - screen_size.x):
 				remove_obstacle(obstacle)
-		
 		if (score / SCORE_MODIFIER) >= 10000 and $Player.is_on_floor():
-			get_tree().change_scene_to_file("res://scenes/enterance_cutscene.tscn")
+			get_tree().change_scene_to_file("res://scenes/cutscene/enterance_cutscene.tscn")
 	else: 
 		if Input.is_action_pressed("jump"):
 			game_running = true
@@ -122,6 +125,8 @@ func hit_obstacle(body):
 		
 		
 func game_over():
+	$Player/Hurt.playing = true
+	MusicPlayer.StopSongsNow()
 	get_tree().paused = true
 	game_running = false
 	$GameOver.show()

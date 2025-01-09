@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://34pt184psva4"]
+[gd_scene load_steps=27 format=3 uid="uid://34pt184psva4"]
 
 [ext_resource type="Texture2D" uid="uid://bgy5ie5mwhr8g" path="res://assets/images/player/idle/_a_frm0,100.png" id="1_ohy6e"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_x04kd"]
@@ -22,6 +22,8 @@
 [ext_resource type="Texture2D" uid="uid://baf716lh15qhh" path="res://assets/images/player/run/_a_frm5,100.png" id="18_220fu"]
 [ext_resource type="Texture2D" uid="uid://bwwq6a315gbna" path="res://assets/images/player/run/_a_frm6,100.png" id="19_o482o"]
 [ext_resource type="Texture2D" uid="uid://bicnusp624fcx" path="res://assets/images/player/run/_a_frm7,100.png" id="20_tsbrg"]
+[ext_resource type="AudioStream" uid="uid://dl1t4vk70fuw4" path="res://assets/sounds/SFX/jump.wav" id="23_8155i"]
+[ext_resource type="AudioStream" uid="uid://gtrhy53sivia" path="res://assets/sounds/SFX/hurt.wav" id="24_uqtig"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_x1ua8"]
 animations = [{
@@ -122,3 +124,12 @@ frame_progress = 0.800714
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -0.166667)
 shape = SubResource("RectangleShape2D_0wchp")
+
+[node name="Jump" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("23_8155i")
+bus = &"SFX"
+
+[node name="Hurt" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+stream = ExtResource("24_uqtig")
+bus = &"SFX"

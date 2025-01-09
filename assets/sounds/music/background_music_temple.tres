@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="OvaniSong" load_steps=7 format=3 uid="uid://ccp7ii6kmv5h4"]
+
+[ext_resource type="Script" path="res://assets/sounds/SFX/OvaniPlugin/OvaniSong.gd" id="1_opimx"]
+[ext_resource type="AudioStream" uid="uid://car2te5yectdw" path="res://assets/sounds/music/Rhythmic Vol2 Hundra Intensity 1.wav" id="1_u5120"]
+[ext_resource type="AudioStream" uid="uid://crgwsl2pdhqux" path="res://assets/sounds/music/Rhythmic Vol2 Hundra Intensity 2.wav" id="2_c8e6j"]
+[ext_resource type="AudioStream" uid="uid://dtsl35cfnc4tb" path="res://assets/sounds/music/Rhythmic Vol2 Hundra Main.wav" id="3_covlg"]
+[ext_resource type="AudioStream" uid="uid://brjf5vcvxeto0" path="res://assets/sounds/music/Rhythmic Vol2 Hundra Cut 30.wav" id="4_a3tr2"]
+[ext_resource type="AudioStream" uid="uid://fhdcywhhbxd4" path="res://assets/sounds/music/Rhythmic Vol2 Hundra Cut 60.wav" id="5_qs5b7"]
+
+[resource]
+script = ExtResource("1_opimx")
+Intensity1 = ExtResource("1_u5120")
+Intensity2 = ExtResource("2_c8e6j")
+Intensity3 = ExtResource("3_covlg")
+Loop30 = ExtResource("4_a3tr2")
+Loop60 = ExtResource("5_qs5b7")
+ReverbTail = 2.85
+SongMode = 0

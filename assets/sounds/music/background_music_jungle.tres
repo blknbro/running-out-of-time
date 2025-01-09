@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="OvaniSong" load_steps=7 format=3 uid="uid://cyivupwdcowsj"]
+
+[ext_resource type="AudioStream" uid="uid://bcm00dbn0cdi8" path="res://assets/sounds/music/Rhythmic Vol2 Chankura Intensity 1.wav" id="1_c5j5l"]
+[ext_resource type="Script" path="res://assets/sounds/SFX/OvaniPlugin/OvaniSong.gd" id="1_ul7gx"]
+[ext_resource type="AudioStream" uid="uid://dwb4k6snovos4" path="res://assets/sounds/music/Rhythmic Vol2 Chankura Intensity 2.wav" id="2_8l08i"]
+[ext_resource type="AudioStream" uid="uid://efbm34y3hpha" path="res://assets/sounds/music/Rhythmic Vol2 Chankura Main.wav" id="3_aqst2"]
+[ext_resource type="AudioStream" uid="uid://d1ufciawbb8yo" path="res://assets/sounds/music/Rhythmic Vol2 Chankura Cut 30.wav" id="4_sxevm"]
+[ext_resource type="AudioStream" uid="uid://b7i5tqk7c41fu" path="res://assets/sounds/music/Rhythmic Vol2 Chankura Cut 60.wav" id="5_7dcpo"]
+
+[resource]
+script = ExtResource("1_ul7gx")
+Intensity1 = ExtResource("1_c5j5l")
+Intensity2 = ExtResource("2_8l08i")
+Intensity3 = ExtResource("3_aqst2")
+Loop30 = ExtResource("4_sxevm")
+Loop60 = ExtResource("5_7dcpo")
+ReverbTail = 3.1
+SongMode = 0

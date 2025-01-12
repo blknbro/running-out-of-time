@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=3 uid="uid://blsbelxr0inll"]
+
+[ext_resource type="Texture2D" uid="uid://b2rhk4lhkxpb7" path="res://assets/images/obstacles/slime_purple.png" id="1_2py05"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dg8iu"]
+atlas = ExtResource("1_2py05")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qtyfu"]
+atlas = ExtResource("1_2py05")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m06pu"]
+atlas = ExtResource("1_2py05")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_17pc2"]
+atlas = ExtResource("1_2py05")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uh527"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dg8iu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qtyfu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m06pu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_17pc2")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vtbps"]
+size = Vector2(40, 58)
+
+[node name="PurpleSlime" type="Area2D"]
+texture_filter = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_uh527")
+animation = &"idle"
+autoplay = "idle"
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 19)
+shape = SubResource("RectangleShape2D_vtbps")

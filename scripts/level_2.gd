@@ -1,12 +1,12 @@
 extends Node
 
-var skeleton_scene = preload("res://scenes/game_elements/skeleton.tscn")
-var rock_scene = preload("res://scenes/game_elements/rock.tscn")
+var green_slime = preload("res://scenes/game_elements/green_slime.tscn")
+var purple_slime = preload("res://scenes/game_elements/purple_slime.tscn")
 var barrel_scene = preload("res://scenes/game_elements/barrel.tscn")
 
 var temple_music : OvaniSong = load("res://assets/sounds/music/background_music_temple.tres")
 
-var obstacle_types := [skeleton_scene, rock_scene, barrel_scene]
+var obstacle_types := [green_slime, purple_slime, barrel_scene]
 var obstacles : Array
 
 
@@ -19,10 +19,10 @@ var score : int
 var last_obstacles 
 var difficulty : int
 const SCORE_MODIFIER : int = 10
-const START_SPEED : float = 10.0
-const SPEED_MODIFIER : int = 25000
-const MAX_SPEED : int = 13
-const MAX_DIFFICULTY : int = 2
+const START_SPEED : float = 13.0
+const SPEED_MODIFIER : int = 10000
+const MAX_SPEED : int = 14
+const MAX_DIFFICULTY : int = 4
 
 var screen_size : Vector2i
 var ground_height : int
@@ -43,10 +43,9 @@ func new_game():
 	show_score()
 	game_running = false
 	get_tree().paused = false
-	difficulty = 0
+	difficulty = 1
 	
-	MusicPlayer.QueueSong(temple_music)
-	MusicPlayer.FadeIntensity(1, 10)
+	reset_music()
 	
 	for obstacle in obstacles:
 		obstacle.queue_free()
@@ -70,7 +69,7 @@ func _process(delta: float) -> void:
 		if speed > MAX_SPEED:
 			speed = MAX_SPEED
 		adjust_difficulty()
-		testEsc()
+		test_esc()
 		
 		generate_obstacles()
 		
@@ -101,8 +100,8 @@ func generate_obstacles():
 		for i in range(randi() % max_obstacles + 1):
 			var obstacle_type = obstacle_types.pick_random()
 			var obstacle = obstacle_type.instantiate()
-			var obstacle_height = obstacle.get_node("AnimatedSprite2D").sprite_frames.get_frame_texture("idle",0).get_height() if obstacle_type == skeleton_scene else obstacle.get_node("Sprite2D").texture.get_height()
-			var obstacle_scale = obstacle.get_node("AnimatedSprite2D" if obstacle_type == skeleton_scene else "Sprite2D").scale
+			var obstacle_height = obstacle.get_node("AnimatedSprite2D").sprite_frames.get_frame_texture("idle",0).get_height() if obstacle_type == green_slime or obstacle_type == purple_slime else obstacle.get_node("Sprite2D").texture.get_height()
+			var obstacle_scale = obstacle.get_node("AnimatedSprite2D" if obstacle_type == green_slime or obstacle_type == purple_slime else "Sprite2D").scale
 			var obstacle_x : int = VIEWPORT.x + score + 100 + (i * 100)
 			var obstacle_y : int = VIEWPORT.y - ground_height - ( obstacle_height * obstacle_scale.y / 2 ) + 5
 			last_obstacles = obstacle
@@ -119,7 +118,7 @@ func remove_obstacle(obstacle):
 	obstacles.erase(obstacle)
 	
 func adjust_difficulty():
-	difficulty = score / SPEED_MODIFIER
+	difficulty = score / SPEED_MODIFIER + 1
 	if difficulty > MAX_DIFFICULTY:
 		difficulty = MAX_DIFFICULTY
 
@@ -127,11 +126,15 @@ func hit_obstacle(body):
 	if body.name == "Player":
 		game_over()
 		
-func testEsc():
+func test_esc():
 	if Input.is_action_pressed("escape") and !get_tree().paused and game_running:
 		$PauseMenu.pause()
 	elif Input.is_action_pressed("escape") and get_tree().paused and game_running:
 		$PauseMenu.resume()
+
+func reset_music():
+	MusicPlayer.QueueSong(temple_music)
+	MusicPlayer.FadeIntensity(1, 10)
 
 func game_over():
 	$Player/Hurt.playing = true

@@ -5,7 +5,7 @@ var purple_slime = preload("res://scenes/game_elements/purple_slime.tscn")
 var barrel_scene = preload("res://scenes/game_elements/barrel.tscn")
 var toxic_trap = preload("res://scenes/game_elements/toxic_trap.tscn")
 
-var temple_music : OvaniSong = load("res://assets/sounds/music/background_music_temple.tres")
+var escape_music : OvaniSong = load("res://assets/sounds/music/background_music_escape.tres")
 
 var obstacle_types := [green_slime, purple_slime, barrel_scene, toxic_trap]
 var obstacles : Array
@@ -135,7 +135,7 @@ func test_esc():
 
 func reset_music():
 	MusicPlayer.Intensity = 0
-	MusicPlayer.QueueSong(temple_music)
+	MusicPlayer.QueueSong(escape_music)
 	MusicPlayer.FadeIntensity(1, 10)
 
 func game_over():

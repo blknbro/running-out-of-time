@@ -1,13 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://ixqlfchwguw0"]
+[gd_scene load_steps=2 format=3 uid="uid://ixqlfchwguw0"]
 
 [ext_resource type="Script" path="res://OvaniPlugin/OvaniPlayer.gd" id="1_4485l"]
-[ext_resource type="Script" path="res://OvaniPlugin/OvaniSong.gd" id="2_q4yqr"]
 
 [node name="MusicPlayer" type="Node"]
+process_mode = 3
 script = ExtResource("1_4485l")
-QueuedSongs = Array[ExtResource("2_q4yqr")]([])
-Volume = 0.0
-Intensity = 0.0
-PlayInEditor = false
 Bus = &"Music"
-LoopQueue = false

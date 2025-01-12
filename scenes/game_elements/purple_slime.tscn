@@ -35,7 +35,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vtbps"]
@@ -49,6 +49,7 @@ scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_uh527")
 animation = &"idle"
 autoplay = "idle"
+frame_progress = 0.464289
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

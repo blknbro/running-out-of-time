@@ -1,12 +1,47 @@
-[gd_scene load_steps=2 format=3 uid="uid://7oe0u8wr8ldv"]
+[gd_scene load_steps=8 format=3 uid="uid://7oe0u8wr8ldv"]
 
 [ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_0e4gd"]
+[ext_resource type="FontFile" uid="uid://dx6wnerk5s62h" path="res://assets/fonts/LEMONMILK-Regular.otf" id="2_lodpc"]
+[ext_resource type="Texture2D" uid="uid://cwu8js4r4ad5l" path="res://assets/images/ui.png" id="3_m5afm"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i6c42"]
+texture = ExtResource("3_m5afm")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(320, 64, 64, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qgkuc"]
+texture = ExtResource("3_m5afm")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(320, 32, 64, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b86o5"]
+texture = ExtResource("3_m5afm")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(320, 32, 64, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g4u0b"]
+texture = ExtResource("3_m5afm")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(320, 32, 64, 32)
 
 [node name="PauseMenu" type="CanvasLayer"]
 process_mode = 2
 script = ExtResource("1_0e4gd")
 
 [node name="Panel" type="Panel" parent="."]
+texture_filter = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -18,6 +53,7 @@ offset_right = 88.0
 offset_bottom = 88.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_i6c42")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 texture_filter = 1
@@ -28,23 +64,53 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -72.0
-offset_top = -72.0
+offset_top = -76.0
 offset_right = 72.0
-offset_bottom = 72.0
+offset_bottom = 68.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 25
+theme_override_constants/separation = 24
 
 [node name="ResumeButton" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.223529, 0.223529, 0.223529, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_lodpc")
+theme_override_styles/hover = SubResource("StyleBoxTexture_qgkuc")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_b86o5")
+theme_override_styles/normal = SubResource("StyleBoxTexture_g4u0b")
 text = "Resume"
 
 [node name="RestartButton" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.223529, 0.223529, 0.223529, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_lodpc")
+theme_override_styles/hover = SubResource("StyleBoxTexture_qgkuc")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_b86o5")
+theme_override_styles/normal = SubResource("StyleBoxTexture_g4u0b")
 text = "Restart"
 
 [node name="QuitButton" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.223529, 0.223529, 0.223529, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_lodpc")
+theme_override_styles/hover = SubResource("StyleBoxTexture_qgkuc")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_b86o5")
+theme_override_styles/normal = SubResource("StyleBoxTexture_g4u0b")
 text = "Quit"
 
 [connection signal="pressed" from="Panel/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]

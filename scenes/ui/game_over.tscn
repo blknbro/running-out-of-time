@@ -1,15 +1,31 @@
-[gd_scene load_steps=4 format=3 uid="uid://dsmys7l5bfc1r"]
+[gd_scene load_steps=6 format=3 uid="uid://dsmys7l5bfc1r"]
 
 [ext_resource type="FontFile" uid="uid://dx6wnerk5s62h" path="res://assets/fonts/LEMONMILK-Regular.otf" id="1_43jq1"]
 [ext_resource type="Texture2D" uid="uid://cwu8js4r4ad5l" path="res://assets/images/ui.png" id="2_7q8lm"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_li2y8"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8fux5"]
 texture = ExtResource("2_7q8lm")
 texture_margin_left = 2.0
 texture_margin_top = 2.0
 texture_margin_right = 2.0
-texture_margin_bottom = 2.0
-region_rect = Rect2(32, 32, 96, 64)
+texture_margin_bottom = 4.0
+region_rect = Rect2(320, 32, 64, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sy3n6"]
+texture = ExtResource("2_7q8lm")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(320, 32, 64, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pbxib"]
+texture = ExtResource("2_7q8lm")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(320, 32, 64, 32)
 
 [node name="GameOver" type="CanvasLayer"]
 
@@ -26,10 +42,15 @@ offset_right = 125.0
 offset_bottom = 27.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.223529, 0.223529, 0.223529, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_43jq1")
-theme_override_styles/hover = SubResource("StyleBoxTexture_li2y8")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_li2y8")
-theme_override_styles/normal = SubResource("StyleBoxTexture_li2y8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8fux5")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_sy3n6")
+theme_override_styles/normal = SubResource("StyleBoxTexture_pbxib")
 action_mode = 0
 text = "RESTART"

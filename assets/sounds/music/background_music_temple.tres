@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="OvaniSong" load_steps=7 format=3 uid="uid://ccp7ii6kmv5h4"]
 
-[ext_resource type="Script" path="res://assets/sounds/SFX/OvaniPlugin/OvaniSong.gd" id="1_opimx"]
+[ext_resource type="Script" path="res://OvaniPlugin/OvaniSong.gd" id="1_opimx"]
 [ext_resource type="AudioStream" uid="uid://car2te5yectdw" path="res://assets/sounds/music/Rhythmic Vol2 Hundra Intensity 1.wav" id="1_u5120"]
 [ext_resource type="AudioStream" uid="uid://crgwsl2pdhqux" path="res://assets/sounds/music/Rhythmic Vol2 Hundra Intensity 2.wav" id="2_c8e6j"]
 [ext_resource type="AudioStream" uid="uid://dtsl35cfnc4tb" path="res://assets/sounds/music/Rhythmic Vol2 Hundra Main.wav" id="3_covlg"]

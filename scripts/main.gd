@@ -33,6 +33,7 @@ func _ready() -> void:
 	var tile_size = $Ground/TileMapLayer.tile_set.tile_size
 	ground_height = $Ground/TileMapLayer.get_used_rect().size.y * tile_size.y
 	$GameOver/Button.pressed.connect(self.new_game)
+	$PauseMenu/Panel/VBoxContainer/RestartButton.pressed.connect(self.new_game)
 	new_game()
 	
 
@@ -44,7 +45,7 @@ func new_game():
 	get_tree().paused = false
 	difficulty = 0
 	
-	MusicPlayer.QueueSong(jungle_music)
+	reset_music()
 	
 	for obstacle in obstacles:
 		obstacle.queue_free()
@@ -57,6 +58,7 @@ func new_game():
 	
 	$HUD/StartLabel.show()
 	$GameOver.hide()
+	$PauseMenu.hide()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -67,6 +69,7 @@ func _process(delta: float) -> void:
 		if speed > MAX_SPEED:
 			speed = MAX_SPEED
 		adjust_difficulty()
+		test_esc()
 		
 		generate_obstacles()
 		
@@ -82,12 +85,14 @@ func _process(delta: float) -> void:
 		for obstacle in obstacles:
 			if obstacle.position.x < ($Camera2D.position.x - screen_size.x):
 				remove_obstacle(obstacle)
-		if (score / SCORE_MODIFIER) >= 10000 and $Player.is_on_floor():
+		
+		if (score / SCORE_MODIFIER) >= 500 and $Player.is_on_floor():
 			get_tree().change_scene_to_file("res://scenes/cutscene/enterance_cutscene.tscn")
 	else: 
 		if Input.is_action_pressed("jump"):
 			game_running = true
 			$HUD/StartLabel.visible = false
+
 func show_score():
 	$HUD/ScoreLabel.text = "SCORE: " + str(score / SCORE_MODIFIER)
 
@@ -109,11 +114,11 @@ func add_obstacle(obstacle, x, y):
 	obstacle.body_entered.connect(hit_obstacle)
 	add_child(obstacle)
 	obstacles.append(obstacle)
-	
+
 func remove_obstacle(obstacle):
 	obstacle.queue_free()
 	obstacles.erase(obstacle)
-	
+
 func adjust_difficulty():
 	difficulty = score / SPEED_MODIFIER
 	if difficulty > MAX_DIFFICULTY:
@@ -122,10 +127,20 @@ func adjust_difficulty():
 func hit_obstacle(body):
 	if body.name == "Player":
 		game_over()
+
+func test_esc():
+	if Input.is_action_pressed("escape") and !get_tree().paused and game_running:
+		$PauseMenu.pause()
+	elif Input.is_action_pressed("escape") and get_tree().paused and game_running:
+		$PauseMenu.resume()
 		
-		
+func reset_music():
+	MusicPlayer.Intensity = 0
+	MusicPlayer.QueueSong(jungle_music)
+	MusicPlayer.FadeIntensity(1, 10)
+
 func game_over():
-	$Player/Hurt.playing = true
+	$Player.play_hurt()
 	MusicPlayer.StopSongsNow()
 	get_tree().paused = true
 	game_running = false

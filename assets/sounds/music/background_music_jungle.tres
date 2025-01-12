@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="OvaniSong" load_steps=7 format=3 uid="uid://cyivupwdcowsj"]
 
 [ext_resource type="AudioStream" uid="uid://bcm00dbn0cdi8" path="res://assets/sounds/music/Rhythmic Vol2 Chankura Intensity 1.wav" id="1_c5j5l"]
-[ext_resource type="Script" path="res://assets/sounds/SFX/OvaniPlugin/OvaniSong.gd" id="1_ul7gx"]
+[ext_resource type="Script" path="res://OvaniPlugin/OvaniSong.gd" id="1_ul7gx"]
 [ext_resource type="AudioStream" uid="uid://dwb4k6snovos4" path="res://assets/sounds/music/Rhythmic Vol2 Chankura Intensity 2.wav" id="2_8l08i"]
 [ext_resource type="AudioStream" uid="uid://efbm34y3hpha" path="res://assets/sounds/music/Rhythmic Vol2 Chankura Main.wav" id="3_aqst2"]
 [ext_resource type="AudioStream" uid="uid://d1ufciawbb8yo" path="res://assets/sounds/music/Rhythmic Vol2 Chankura Cut 30.wav" id="4_sxevm"]

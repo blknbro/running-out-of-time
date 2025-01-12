@@ -84,6 +84,7 @@ theme_override_constants/separation = 24
 alignment = 1
 
 [node name="StartButton" type="Button" parent="VBoxContainer"]
+texture_filter = 1
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
@@ -99,6 +100,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_hfdbh")
 text = "Start"
 
 [node name="QuitButton" type="Button" parent="VBoxContainer"]
+texture_filter = 1
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
@@ -114,7 +116,6 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_wudu6")
 text = "Quit"
 
 [node name="MasterVolumeSlider" parent="." instance=ExtResource("6_igb61")]
-texture_filter = 1
 layout_mode = 0
 offset_left = 472.0
 offset_top = 472.0
@@ -133,7 +134,6 @@ text = "MASTER"
 horizontal_alignment = 2
 
 [node name="MusicVolumeSlider" parent="." instance=ExtResource("6_igb61")]
-texture_filter = 1
 layout_mode = 0
 offset_left = 472.0
 offset_top = 448.0
@@ -143,6 +143,7 @@ bus_name = "Music"
 
 [node name="MusicLabel" type="Label" parent="MusicVolumeSlider"]
 texture_filter = 1
+layout_mode = 0
 offset_left = -80.0
 offset_right = -17.0
 offset_bottom = 23.0
@@ -151,7 +152,6 @@ text = "MUSIC"
 horizontal_alignment = 2
 
 [node name="SFXVolumeSlider" parent="." instance=ExtResource("6_igb61")]
-texture_filter = 1
 layout_mode = 0
 offset_left = 472.0
 offset_top = 424.0
@@ -161,6 +161,7 @@ bus_name = "SFX"
 
 [node name="SFXLabel" type="Label" parent="SFXVolumeSlider"]
 texture_filter = 1
+layout_mode = 0
 offset_left = -80.0
 offset_right = -17.0
 offset_bottom = 23.0

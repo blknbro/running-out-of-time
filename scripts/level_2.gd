@@ -33,6 +33,7 @@ func _ready() -> void:
 	var tile_size = $Ground/TileMapLayer.tile_set.tile_size
 	ground_height = $Ground/TileMapLayer.get_used_rect().size.y * tile_size.y
 	$GameOver/Button.pressed.connect(self.new_game)
+	$PauseMenu/Panel/VBoxContainer/RestartButton.pressed.connect(self.new_game)
 	new_game()
 	
 
@@ -45,6 +46,7 @@ func new_game():
 	difficulty = 0
 	
 	MusicPlayer.QueueSong(temple_music)
+	MusicPlayer.FadeIntensity(1, 10)
 	
 	for obstacle in obstacles:
 		obstacle.queue_free()
@@ -57,6 +59,7 @@ func new_game():
 	
 	$HUD/StartLabel.show()
 	$GameOver.hide()
+	$PauseMenu.hide()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -67,6 +70,7 @@ func _process(delta: float) -> void:
 		if speed > MAX_SPEED:
 			speed = MAX_SPEED
 		adjust_difficulty()
+		testEsc()
 		
 		generate_obstacles()
 		
@@ -123,7 +127,12 @@ func hit_obstacle(body):
 	if body.name == "Player":
 		game_over()
 		
-		
+func testEsc():
+	if Input.is_action_pressed("escape") and !get_tree().paused and game_running:
+		$PauseMenu.pause()
+	elif Input.is_action_pressed("escape") and get_tree().paused and game_running:
+		$PauseMenu.resume()
+
 func game_over():
 	$Player/Hurt.playing = true
 	MusicPlayer.StopSongsNow()

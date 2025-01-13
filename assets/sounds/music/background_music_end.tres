@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="OvaniSong" load_steps=7 format=3 uid="uid://bihoty02iae7t"]
+
+[ext_resource type="Script" path="res://OvaniPlugin/OvaniSong.gd" id="1_71upn"]
+[ext_resource type="AudioStream" uid="uid://cwggisednj6oa" path="res://assets/sounds/music/Rhythmic Vol2 Zebra Intensity 1.wav" id="1_bf141"]
+[ext_resource type="AudioStream" uid="uid://b5udpbiycrlb3" path="res://assets/sounds/music/Rhythmic Vol2 Zebra Intensity 2.wav" id="2_l3x1f"]
+[ext_resource type="AudioStream" uid="uid://duf0pc5cobsbf" path="res://assets/sounds/music/Rhythmic Vol2 Zebra Main.wav" id="3_f8gvj"]
+[ext_resource type="AudioStream" uid="uid://cycmesdrhlg2l" path="res://assets/sounds/music/Rhythmic Vol2 Zebra Cut 30.wav" id="4_dvy0r"]
+[ext_resource type="AudioStream" uid="uid://d2oosiyh0wokk" path="res://assets/sounds/music/Rhythmic Vol2 Zebra Cut 60.wav" id="5_mb861"]
+
+[resource]
+script = ExtResource("1_71upn")
+Intensity1 = ExtResource("1_bf141")
+Intensity2 = ExtResource("2_l3x1f")
+Intensity3 = ExtResource("3_f8gvj")
+Loop30 = ExtResource("4_dvy0r")
+Loop60 = ExtResource("5_mb861")
+ReverbTail = 0.0
+SongMode = 0

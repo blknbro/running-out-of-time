@@ -111,7 +111,7 @@ theme_override_fonts/font = ExtResource("2_lodpc")
 theme_override_styles/hover = SubResource("StyleBoxTexture_qgkuc")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_b86o5")
 theme_override_styles/normal = SubResource("StyleBoxTexture_g4u0b")
-text = "Quit"
+text = "Back"
 
 [connection signal="pressed" from="Panel/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

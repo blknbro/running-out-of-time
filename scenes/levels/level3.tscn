@@ -1,12 +1,23 @@
-[gd_scene load_steps=8 format=3 uid="uid://0ytip7w6y2yn"]
+[gd_scene load_steps=13 format=3 uid="uid://0ytip7w6y2yn"]
 
 [ext_resource type="Script" path="res://scripts/level_3.gd" id="1_mghvw"]
 [ext_resource type="PackedScene" uid="uid://34pt184psva4" path="res://scenes/game_elements/player.tscn" id="2_yiyxp"]
 [ext_resource type="PackedScene" uid="uid://2xbown0o7evr" path="res://scenes/ui/hud.tscn" id="3_j1c87"]
 [ext_resource type="PackedScene" uid="uid://dsmys7l5bfc1r" path="res://scenes/ui/game_over.tscn" id="4_tydib"]
 [ext_resource type="PackedScene" uid="uid://7oe0u8wr8ldv" path="res://scenes/ui/pause_menu.tscn" id="5_hkke1"]
-[ext_resource type="PackedScene" uid="uid://cjcgsirdm5oc7" path="res://scenes/game_elements/background_level2.tscn" id="6_1na02"]
-[ext_resource type="PackedScene" uid="uid://b5b0lch8nmlo5" path="res://scenes/game_elements/ground_level2.tscn" id="7_p24pg"]
+[ext_resource type="PackedScene" uid="uid://dxmx6qpuq0g6n" path="res://scenes/game_elements/background_level3.tscn" id="6_5rkje"]
+[ext_resource type="PackedScene" uid="uid://dknbmxnxqn8dc" path="res://scenes/game_elements/ground_level3.tscn" id="7_lf4so"]
+[ext_resource type="Texture2D" uid="uid://cwu8js4r4ad5l" path="res://assets/images/ui.png" id="8_5c3s7"]
+[ext_resource type="Script" path="res://scripts/timer_bar.gd" id="8_fgqip"]
+[ext_resource type="FontFile" uid="uid://dx6wnerk5s62h" path="res://assets/fonts/LEMONMILK-Regular.otf" id="10_4cfh8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5sxrv"]
+atlas = ExtResource("8_5c3s7")
+region = Rect2(448, 171, 32, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0aann"]
+atlas = ExtResource("8_5c3s7")
+region = Rect2(514, 143, 26, 3)
 
 [node name="Main" type="Node"]
 script = ExtResource("1_mghvw")
@@ -24,7 +35,44 @@ process_mode = 2
 
 [node name="PauseMenu" parent="." instance=ExtResource("5_hkke1")]
 
-[node name="Background" parent="." instance=ExtResource("6_1na02")]
+[node name="Background" parent="." instance=ExtResource("6_5rkje")]
 
-[node name="Ground" parent="." instance=ExtResource("7_p24pg")]
+[node name="Ground" parent="." instance=ExtResource("7_lf4so")]
 position = Vector2(0, 600)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ProgressBar" type="TextureProgressBar" parent="CanvasLayer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 888.0
+offset_top = -640.0
+offset_right = 920.0
+offset_bottom = -624.0
+grow_vertical = 0
+scale = Vector2(8, 5)
+max_value = 8000.0
+step = 10.0
+value = 2000.0
+texture_under = SubResource("AtlasTexture_5sxrv")
+texture_progress = SubResource("AtlasTexture_0aann")
+texture_progress_offset = Vector2(3, 3)
+script = ExtResource("8_fgqip")
+
+[node name="TimeLabel" type="Label" parent="CanvasLayer"]
+texture_filter = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 672.0
+offset_top = -648.0
+offset_right = 883.0
+offset_bottom = -586.0
+grow_vertical = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_4cfh8")
+theme_override_font_sizes/font_size = 40
+text = "Time left"
+horizontal_alignment = 1
+vertical_alignment = 1

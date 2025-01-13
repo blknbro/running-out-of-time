@@ -56,7 +56,7 @@ func new_game():
 	$Camera2D.position = CAMERA_START_POSITION
 	$Ground.position = Vector2i(0, 600)
 	
-	$HUD/StartLabel.show()
+	$HUD/Panel.show()
 	$GameOver.hide()
 	$PauseMenu.hide()
 
@@ -86,12 +86,12 @@ func _process(delta: float) -> void:
 			if obstacle.position.x < ($Camera2D.position.x - screen_size.x):
 				remove_obstacle(obstacle)
 		
-		if (score / SCORE_MODIFIER) >= 500 and $Player.is_on_floor():
+		if (score / SCORE_MODIFIER) >= 10000 and $Player.is_on_floor():
 			get_tree().change_scene_to_file("res://scenes/cutscene/enterance_cutscene.tscn")
 	else: 
 		if Input.is_action_pressed("jump"):
 			game_running = true
-			$HUD/StartLabel.visible = false
+			$HUD/Panel.visible = false
 
 func show_score():
 	$HUD/ScoreLabel.text = "SCORE: " + str(score / SCORE_MODIFIER)

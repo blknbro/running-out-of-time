@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://2xbown0o7evr"]
+[gd_scene load_steps=4 format=3 uid="uid://2xbown0o7evr"]
 
 [ext_resource type="FontFile" uid="uid://dx6wnerk5s62h" path="res://assets/fonts/LEMONMILK-Regular.otf" id="1_oslcc"]
+[ext_resource type="Texture2D" uid="uid://ddrog1mcfqphb" path="res://assets/images/how.png" id="2_i8j3l"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bo6cs"]
+texture = ExtResource("2_i8j3l")
 
 [node name="HUD" type="CanvasLayer"]
 
@@ -15,16 +19,104 @@ theme_override_font_sizes/font_size = 40
 text = "SCORE:"
 vertical_alignment = 1
 
-[node name="StartLabel" type="Label" parent="."]
+[node name="Panel" type="Panel" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
+offset_left = -312.0
+offset_top = -184.0
+offset_right = 304.0
+offset_bottom = 268.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScoreLabel" type="Label" parent="Panel"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -75.0
+offset_right = 75.0
+offset_bottom = 54.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_oslcc")
+theme_override_font_sizes/font_size = 40
+text = "HOW TO PLAY"
+vertical_alignment = 1
+
+[node name="ScoreLabel2" type="Label" parent="Panel"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -290.0
+offset_top = -174.0
+offset_right = 290.0
+offset_bottom = -102.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_oslcc")
+theme_override_font_sizes/font_size = 24
+text = "JUMP OVER EVERY OBStACLE YOU ENCOUNTER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScoreLabel3" type="Label" parent="Panel"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -290.0
+offset_top = 82.0
+offset_right = 290.0
+offset_bottom = 154.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_oslcc")
+theme_override_font_sizes/font_size = 24
+text = "AND MAKE SURE YOU EARN ATLEAST 10.000 SCORE"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Panel" type="Panel" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -94.0
+offset_right = 100.0
+offset_bottom = 66.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_bo6cs")
+
+[node name="StartLabel" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -230.0
+offset_top = 162.0
+offset_right = 238.0
+offset_bottom = 216.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)

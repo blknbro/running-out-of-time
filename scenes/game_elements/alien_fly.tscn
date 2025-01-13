@@ -1,0 +1,84 @@
+[gd_scene load_steps=12 format=3 uid="uid://citu8m68bxs1d"]
+
+[ext_resource type="Texture2D" uid="uid://dio8e7i6ruc7h" path="res://assets/images/obstacles/alien_enemy_fly_idle.png" id="1_atsd0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ilg8w"]
+atlas = ExtResource("1_atsd0")
+region = Rect2(0, 0, 83, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_250b1"]
+atlas = ExtResource("1_atsd0")
+region = Rect2(83, 0, 83, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3tm3w"]
+atlas = ExtResource("1_atsd0")
+region = Rect2(166, 0, 83, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rh0y5"]
+atlas = ExtResource("1_atsd0")
+region = Rect2(249, 0, 83, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bid24"]
+atlas = ExtResource("1_atsd0")
+region = Rect2(332, 0, 83, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pxqkw"]
+atlas = ExtResource("1_atsd0")
+region = Rect2(415, 0, 83, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ohjm"]
+atlas = ExtResource("1_atsd0")
+region = Rect2(498, 0, 83, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5cu4c"]
+atlas = ExtResource("1_atsd0")
+region = Rect2(581, 0, 83, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4115m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ilg8w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_250b1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3tm3w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rh0y5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bid24")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pxqkw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ohjm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5cu4c")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c1qma"]
+size = Vector2(72, 80)
+
+[node name="AlienFly" type="Area2D"]
+texture_filter = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -38.4)
+scale = Vector2(2.3, 2.3)
+sprite_frames = SubResource("SpriteFrames_4115m")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4, -22.4)
+shape = SubResource("RectangleShape2D_c1qma")

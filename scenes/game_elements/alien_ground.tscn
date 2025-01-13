@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=3 uid="uid://wn7l24yowqlx"]
+
+[ext_resource type="Texture2D" uid="uid://bf4axpd5tmacm" path="res://assets/images/obstacles/alien_enemy_ground_idle.png" id="1_clor7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ttq3"]
+atlas = ExtResource("1_clor7")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5sav6"]
+atlas = ExtResource("1_clor7")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_74c4s"]
+atlas = ExtResource("1_clor7")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ywqc6"]
+atlas = ExtResource("1_clor7")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mwu0y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ttq3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5sav6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_74c4s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ywqc6")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_waysp"]
+radius = 28.0
+
+[node name="AlienGround" type="Area2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_mwu0y")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.582598
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, 8)
+shape = SubResource("CircleShape2D_waysp")

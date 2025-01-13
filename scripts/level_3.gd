@@ -1,14 +1,18 @@
 extends Node
 
-var green_slime = preload("res://scenes/game_elements/green_slime.tscn")
-var purple_slime = preload("res://scenes/game_elements/purple_slime.tscn")
-var barrel_scene = preload("res://scenes/game_elements/barrel.tscn")
-var toxic_trap = preload("res://scenes/game_elements/toxic_trap.tscn")
+var alien_fly = preload("res://scenes/game_elements/alien_fly.tscn")
+var alien_ground = preload("res://scenes/game_elements/alien_ground.tscn")
+var robot = preload("res://scenes/game_elements/robot.tscn")
+var hellhound = preload("res://scenes/game_elements/hellhound.tscn")
+
 
 var escape_music : OvaniSong = load("res://assets/sounds/music/background_music_escape.tres")
 
-var obstacle_types := [green_slime, purple_slime, barrel_scene, toxic_trap]
+
+var obstacle_types := [alien_fly, alien_ground, robot, hellhound]
 var obstacles : Array
+
+signal score_changed
 
 
 const PLAYER_START_POSITION = Vector2i(72, 552)
@@ -20,10 +24,9 @@ var score : int
 var last_obstacles 
 var difficulty : int
 const SCORE_MODIFIER : int = 10
-const START_SPEED : float = 13.0
+const START_SPEED : float = 14.0
 const SPEED_MODIFIER : int = 10000
 const MAX_SPEED : int = 14
-const MAX_DIFFICULTY : int = 4
 
 var screen_size : Vector2i
 var ground_height : int
@@ -44,7 +47,7 @@ func new_game():
 	show_score()
 	game_running = false
 	get_tree().paused = false
-	difficulty = 1
+	difficulty = 3
 	
 	reset_music()
 	
@@ -57,7 +60,8 @@ func new_game():
 	$Camera2D.position = CAMERA_START_POSITION
 	$Ground.position = Vector2i(0, 600)
 	
-	$HUD/StartLabel.show()
+	$HUD/Panel.show()
+	$HUD/ScoreLabel.hide()
 	$GameOver.hide()
 	$PauseMenu.hide()
 
@@ -69,7 +73,6 @@ func _process(delta: float) -> void:
 		speed = START_SPEED + score / SPEED_MODIFIER
 		if speed > MAX_SPEED:
 			speed = MAX_SPEED
-		adjust_difficulty()
 		test_esc()
 		
 		generate_obstacles()
@@ -86,14 +89,16 @@ func _process(delta: float) -> void:
 		for obstacle in obstacles:
 			if obstacle.position.x < ($Camera2D.position.x - screen_size.x):
 				remove_obstacle(obstacle)
-		if (score / SCORE_MODIFIER) >= 500 and $Player.is_on_floor():
-			get_tree().change_scene_to_file("res://scenes/cutscene/portal_scene.tscn")
+		if (score / SCORE_MODIFIER) >= 8000 and $Player.is_on_floor():
+			get_tree().change_scene_to_file("res://scenes/cutscene/end_cutscene.tscn")
 	else: 
 		if Input.is_action_pressed("jump"):
 			game_running = true
-			$HUD/StartLabel.visible = false
+			$HUD/Panel.visible = false
 func show_score():
 	$HUD/ScoreLabel.text = "SCORE: " + str(score / SCORE_MODIFIER)
+	score_changed.emit()
+	
 
 func generate_obstacles():
 	if obstacles.is_empty() or last_obstacles.position.x < score + randi_range(100, 500):
@@ -101,8 +106,8 @@ func generate_obstacles():
 		for i in range(randi() % max_obstacles + 1):
 			var obstacle_type = obstacle_types.pick_random()
 			var obstacle = obstacle_type.instantiate()
-			var obstacle_height = obstacle.get_node("AnimatedSprite2D").sprite_frames.get_frame_texture("idle",0).get_height() if obstacle_type == green_slime or obstacle_type == purple_slime or obstacle_type == toxic_trap else obstacle.get_node("Sprite2D").texture.get_height()
-			var obstacle_scale = obstacle.get_node("AnimatedSprite2D" if obstacle_type == green_slime or obstacle_type == purple_slime or obstacle_type == toxic_trap else "Sprite2D").scale
+			var obstacle_height = obstacle.get_node("AnimatedSprite2D").sprite_frames.get_frame_texture("idle",0).get_height()
+			var obstacle_scale = obstacle.get_node("AnimatedSprite2D").scale
 			var obstacle_x : int = VIEWPORT.x + score + 100 + (i * 100)
 			var obstacle_y : int = VIEWPORT.y - ground_height - ( obstacle_height * obstacle_scale.y / 2 ) + 5
 			last_obstacles = obstacle
@@ -118,11 +123,6 @@ func remove_obstacle(obstacle):
 	obstacle.queue_free()
 	obstacles.erase(obstacle)
 	
-func adjust_difficulty():
-	difficulty = score / SPEED_MODIFIER + 1
-	if difficulty > MAX_DIFFICULTY:
-		difficulty = MAX_DIFFICULTY
-
 func hit_obstacle(body):
 	if body.name == "Player":
 		game_over()

@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://bep47ojqdt3yo"]
+
+[ext_resource type="Script" path="res://scripts/end.gd" id="1_1yqmr"]
+[ext_resource type="PackedScene" uid="uid://b63in8fk0dmw8" path="res://scenes/game_elements/ground_level1.tscn" id="2_j4052"]
+[ext_resource type="PackedScene" uid="uid://34pt184psva4" path="res://scenes/game_elements/player.tscn" id="3_a3k75"]
+[ext_resource type="PackedScene" uid="uid://b1ma8fldpm7tf" path="res://scenes/game_elements/background_level1.tscn" id="4_g7kp2"]
+[ext_resource type="PackedScene" uid="uid://dsmys7l5bfc1r" path="res://scenes/ui/game_over.tscn" id="6_awpxd"]
+[ext_resource type="PackedScene" uid="uid://7oe0u8wr8ldv" path="res://scenes/ui/pause_menu.tscn" id="7_cbusg"]
+[ext_resource type="FontFile" uid="uid://dx6wnerk5s62h" path="res://assets/fonts/LEMONMILK-Regular.otf" id="7_j3tgw"]
+
+[node name="END" type="Node"]
+script = ExtResource("1_1yqmr")
+
+[node name="Ground" parent="." instance=ExtResource("2_j4052")]
+position = Vector2(0, 600)
+
+[node name="Player" parent="." instance=ExtResource("3_a3k75")]
+position = Vector2(280, 544)
+
+[node name="Background" parent="." instance=ExtResource("4_g7kp2")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(280, 544)
+
+[node name="GameOver" parent="." instance=ExtResource("6_awpxd")]
+process_mode = 2
+
+[node name="PauseMenu" parent="." instance=ExtResource("7_cbusg")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer"]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -408.5
+offset_top = -228.0
+offset_right = 408.5
+offset_bottom = -142.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_j3tgw")
+theme_override_font_sizes/font_size = 64
+text = "YOU DID IT! WELL PLAYED"
+vertical_alignment = 1

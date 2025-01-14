@@ -86,7 +86,7 @@ tracks/5/keys = {
 
 [sub_resource type="Animation" id="Animation_t7817"]
 resource_name = "end_scene"
-length = 15.0
+length = 20.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -94,7 +94,7 @@ tracks/0/path = NodePath(".:game_running")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 4.06667, 10.4583),
+"times": PackedFloat32Array(0, 2.86667, 17.0916),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [true, false, true]
@@ -106,7 +106,7 @@ tracks/1/path = NodePath("Player:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 3.9, 3.93333, 3.96667, 4.03333, 4.06667, 10.4583, 13.1667),
+"times": PackedFloat32Array(0, 2.7, 2.73333, 2.76667, 2.83333, 2.86667, 17.0916, 19.8),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(-16, 560), Vector2(1040, 560), Vector2(1056, 544), Vector2(1088, 528), Vector2(48, 512), Vector2(112, 560), Vector2(112, 560), Vector2(1168, 560)]
@@ -118,7 +118,7 @@ tracks/2/path = NodePath("Player:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 4, 4.03333),
+"times": PackedFloat32Array(0, 2.8, 2.83333),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [true, false, true]
@@ -130,7 +130,7 @@ tracks/3/path = NodePath("Ground:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 4),
+"times": PackedFloat32Array(0, 2.8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -142,7 +142,7 @@ tracks/4/path = NodePath("Ground2:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 4),
+"times": PackedFloat32Array(0, 2.8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -154,7 +154,7 @@ tracks/5/path = NodePath("Background:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 4),
+"times": PackedFloat32Array(0, 2.8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -166,7 +166,7 @@ tracks/6/path = NodePath("Background2:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 4),
+"times": PackedFloat32Array(0, 2.8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -178,7 +178,7 @@ tracks/7/path = NodePath("Portal:position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 3.999, 4),
+"times": PackedFloat32Array(0, 2.799, 2.8),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(1096, 520), Vector2(1096, 520), Vector2(32, 512)]
@@ -190,7 +190,7 @@ tracks/8/path = NodePath("Portal:visible")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0, 4.6),
+"times": PackedFloat32Array(0, 3.4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -202,7 +202,7 @@ tracks/9/path = NodePath("Panel:visible")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(0, 4.2),
+"times": PackedFloat32Array(0, 3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -214,7 +214,7 @@ tracks/10/path = NodePath("Panel/VBoxContainer/Label:text")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(4.2),
+"times": PackedFloat32Array(3),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": ["Adventurer"]
@@ -226,10 +226,10 @@ tracks/11/path = NodePath("Panel/VBoxContainer/RichTextLabel:text")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(4.2, 5.23333, 6.36667, 7.6, 8.73333, 10),
+"times": PackedFloat32Array(3, 4.93333, 7.83333, 10.5667, 13.4667, 16.6333),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": ["I MADE IT!!!", "AND I HAVE ELEPHANT, BUT....", "DAD...", "MONKEY...", "I WILL RUN...", "FOR YOU!"]
+"values": ["I MADE IT!!!", "AND I HAVE THE ELEPHANT, BUT....", "DAD...", "MONKEY...", "I WILL RUN...", "FOR YOU!"]
 }
 tracks/12/type = "value"
 tracks/12/imported = false
@@ -238,7 +238,7 @@ tracks/12/path = NodePath("Panel/VBoxContainer/RichTextLabel:visible_ratio")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
-"times": PackedFloat32Array(4.2, 4.3, 5.2, 5.23333, 5.33333, 6.33333, 6.36667, 6.46667, 7.5875, 7.6, 7.7, 8.7, 8.72916, 8.81666, 9.96666, 9.99583, 10.0667),
+"times": PackedFloat32Array(3, 3.1, 4.9, 4.93333, 5.03333, 7.79999, 7.83333, 7.93333, 10.5708, 10.5833, 10.6667, 13.4333, 13.4625, 13.55, 16.6, 16.6291, 16.7),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0]
@@ -365,7 +365,7 @@ custom_minimum_size = Vector2(250, 150)
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("8_wbkoa")
 theme_override_font_sizes/normal_font_size = 36
-text = "FOR YOU!"
+text = "I MADE IT!!!"
 scroll_active = false
 
 [node name="Area2D" type="Area2D" parent="."]

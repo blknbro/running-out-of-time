@@ -60,33 +60,32 @@ func new_game():
 	$GameOver.hide()
 	$PauseMenu.hide()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if game_running:
-		
 		speed = START_SPEED + score / SPEED_MODIFIER
 		if speed > MAX_SPEED:
-			speed = MAX_SPEED
+				speed = MAX_SPEED
+		score += speed
 		adjust_difficulty()
-		test_esc()
-		
 		generate_obstacles()
-		
 		$Player.position.x += speed
 		$Camera2D.position.x += speed
-		
-		score += speed
-		show_score()
-		
 		if $Camera2D.position.x - $Ground.position.x > screen_size.x * 2:
 			$Ground.position.x += screen_size.x
 			
 		for obstacle in obstacles:
 			if obstacle.position.x < ($Camera2D.position.x - screen_size.x):
 				remove_obstacle(obstacle)
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	if game_running:
 		
-		if (score / SCORE_MODIFIER) >= 10000 and $Player.is_on_floor():
+		test_esc()
+		
+		show_score()
+		
+		if (score / SCORE_MODIFIER) >= 6000 and $Player.is_on_floor():
 			get_tree().change_scene_to_file("res://scenes/cutscene/enterance_cutscene.tscn")
 	else: 
 		if Input.is_action_pressed("jump"):

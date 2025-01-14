@@ -7,4 +7,4 @@ func _ready():
 	
 
 func update():
-	value = 8000 - get_owner().score / 10
+	value = 6000 - get_owner().score / 10

@@ -44,24 +44,25 @@ func new_game():
 	
 	$GameOver.hide()
 	$PauseMenu.hide()
+	
+func _physics_process(delta: float) -> void:
+	speed = START_SPEED + score / SPEED_MODIFIER
+	if speed > MAX_SPEED:
+		speed = MAX_SPEED
+	score += speed
+	$Player.position.x += speed
+	$Camera2D.position.x += speed
+	
+	
+	if $Camera2D.position.x - $Ground.position.x > screen_size.x * 2:
+		$Ground.position.x += screen_size.x
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-		speed = START_SPEED + score / SPEED_MODIFIER
-		if speed > MAX_SPEED:
-			speed = MAX_SPEED
-		test_esc()
+	test_esc()
+	
 		
-		
-		$Player.position.x += speed
-		$Camera2D.position.x += speed
-		
-		score += speed
-		
-		if $Camera2D.position.x - $Ground.position.x > screen_size.x * 2:
-			$Ground.position.x += screen_size.x
-			
 func test_esc():
 	if Input.is_action_pressed("escape") and !get_tree().paused and game_running:
 		$PauseMenu.pause()

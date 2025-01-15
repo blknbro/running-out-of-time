@@ -305,7 +305,7 @@ tracks/4/path = NodePath("Panel/VBoxContainer/Label:text")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0.799967, 6.9, 10.7, 14.0666, 27, 32.8729),
+"times": PackedFloat32Array(0.799967, 6.9, 10.7, 14.0666, 30.1125, 32.8729),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": ["Adventurer", "Monkey", "Adventurer", "Monkey", "Adventurer", "Monkey"]
@@ -317,10 +317,10 @@ tracks/5/path = NodePath("Panel/VBoxContainer/RichTextLabel:text")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0.0333347, 0.8, 3.6, 6.9, 10.7, 14.0666, 19.1, 23.8583, 26.8667, 32.8729),
+"times": PackedFloat32Array(0.0333347, 0.8, 3.6, 6.9, 10.7, 14.0666, 19.1, 27.5875, 29.9999, 32.8729),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": ["You must RUN. Fast. You don't have much time.", "Hey! GIVE IT BACK!", "Wait. Are you okay? What happend?", "NO! I can't move it move it anymore. :(", "Why? Did you land badly?", "Nope. This place. It. Sucks your life essence out of you.", "You must RUN. Fast. You don't have much time.", "OH, YEAH. HERE YOU GO! And sorry...", "...", "NOW GO!"]
+"values": ["You must RUN. Fast. You don't have much time.", "Hey! GIVE IT BACK!", "Wait. Are you okay? What happened?", "NO! I can't move it move it anymore. :(", "Why? Did you land badly?", "Nope. This place. It. Sucks your life essence out of you.", "You must RUN. Fast. You don't have much time.", "OH, YEAH. HERE YOU GO! And sorry...", "...", "NOW GO!"]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -329,7 +329,7 @@ tracks/6/path = NodePath("Panel/VBoxContainer/RichTextLabel:visible_ratio")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.0333338, 0.233334, 0.7, 0.9, 3.46667, 3.5, 3.7, 6.86666, 6.9, 7.1, 10.6667, 10.7, 10.9, 14.0333, 14.0666, 14.2666, 19.0666, 19.1, 19.3, 23.825, 23.8583, 24.0583, 26.8334, 26.8667, 27.4001, 32.8396, 32.8729, 33.073),
+"times": PackedFloat32Array(0, 0.0333338, 0.233334, 0.7, 0.9, 3.46667, 3.5, 3.7, 6.86666, 6.9, 7.1, 10.6667, 10.7, 10.9, 14.0333, 14.0666, 14.2666, 19.0666, 19.1, 19.3, 27.5542, 27.5875, 27.7875, 29.9459, 29.9749, 30.5333, 32.8396, 32.8729, 33.073),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0]
@@ -341,7 +341,7 @@ tracks/7/path = NodePath("Panel/VBoxContainer/Label:visible_ratio")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0.7, 0.966667, 6.86666, 6.9, 7.1, 10.6583, 10.6917, 10.9333, 14.0333, 14.0666, 14.2666, 26.9667, 27, 27.2, 32.8479, 32.8812, 33.0812),
+"times": PackedFloat32Array(0.7, 0.966667, 6.86666, 6.9, 7.1, 10.6583, 10.6917, 10.9333, 14.0333, 14.0666, 14.2666, 30.0792, 30.1125, 30.3125, 32.8479, 32.8812, 33.0812),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0]
@@ -391,7 +391,7 @@ tracks/11/path = NodePath("TGE:visible")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(0, 24.55, 26.8667),
+"times": PackedFloat32Array(0, 28.3, 29.9999),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [false, true, false]
@@ -403,7 +403,7 @@ tracks/12/path = NodePath("TGE:position")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
-"times": PackedFloat32Array(24.55, 25.1333, 25.7333, 26.2, 26.7667),
+"times": PackedFloat32Array(28.4667, 28.8, 29.2333, 29.5749, 29.8333),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(400, 568), Vector2(352, 536), Vector2(288, 512), Vector2(200, 536), Vector2(152, 568)]

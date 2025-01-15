@@ -21,7 +21,7 @@ var last_obstacles
 var difficulty : int
 const SCORE_MODIFIER : int = 10
 const START_SPEED : float = 12.0
-const SPEED_MODIFIER : int = 25000
+const SPEED_MODIFIER : int = 15000
 const MAX_SPEED : int = 14
 const MAX_DIFFICULTY : int = 4
 
